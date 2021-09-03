@@ -60,7 +60,7 @@ module.exports.editCampground = async (req, res) => {
     const { id } = req.params;
     const { title, location, price } = req.body.campground;
     const newCamp = await Campground.findByIdAndUpdate({_id: id }, { title: title, location: location, price: price }, { new: true })
-    newCamp.images = req.files.map(f => ({url: f.path, filename: f.filename}))
+    // newCamp.images = req.files.map(f => ({url: f.path || newCamp.images.url, filename: f.filename || newCamp.images.filename}))
     await newCamp.save()
     // console.log(newCamp);
     req.flash('success', 'Camp Edited Successfully')

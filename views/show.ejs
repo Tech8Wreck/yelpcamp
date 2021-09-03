@@ -7,7 +7,7 @@
 
   
 
-  <div class="row mb-5">
+  <div class="row mb-5 shadows">
     <div class="col-md-4">
       <div id='map' style='width: 400px; height: 640px;'></div>
     </div>
@@ -19,21 +19,21 @@
           <% } %>
 
             <div class="card-body">
-              <h5 class="card-title">
+              <h5 class="card-title titleSpacing">
                 <%= showCamp.title %>
               </h5>
-              <p class="card-text">
+              <p class="card-text textSpacing">
                 <%= showCamp.description %>
               </p>
             </div>
             <ul class="list-group list-group-flush ">
-              <li class="list-group-item text-muted">
+              <li class="list-group-item text-muted textSpacing">
                 Location. <%= showCamp.location %>
               </li>
-              <li class="list-group-item text-muted">
+              <li class="list-group-item text-muted textSpacing">
                 By. <%= showCamp.author.username %>
               </li>
-              <li class="list-group-item text-muted">
+              <li class="list-group-item text-muted textSpacing">
                 Price/night. <%= showCamp.price %> 
               </li>
 
@@ -76,10 +76,10 @@
       </div>
     </div>
 
-    <div class="card col-md-4 ">
+    <div class="card col-md-4 shadows">
     <%   if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
-          <h5 class="pt-2">Add Review</h5>
+          <h5 class="pt-2 titleSpacing">Add Review</h5>
 
           <form action="/campgrounds/<%= showCamp._id %>/reviews" method="POST" novalidate class="needs-validation">
 
@@ -116,8 +116,8 @@
 
 
             <div class="mb-3">
-              <label class="form-label mb-0" for="reviews">Comment</label>
-              <textarea class="form-control mt-0" name="review[body]" id="reviews" cols="30" rows="3"
+              <label class="form-label mb-0 textSpacing" for="reviews">Comment</label>
+              <textarea class="form-control mt-0 textSpacing" name="review[body]" id="reviews" cols="30" rows="3"
                 required></textarea>
             </div>
 
@@ -125,7 +125,7 @@
           </form>
         </div>
          <%}%>
-          <h5 class="mt-2">Reviews</h5>
+          <h5 class="mt-2 titleSpacing">Reviews</h5>
 
           <% for(let review of showCamp.reviews) { %>
             <% if(!showCamp.reviews.length){ %>
@@ -137,7 +137,7 @@
                   <div class="card-body">
                     <!-- <h5 class="card-title">Card title</h5> -->
                     <!-- <h6 class="card-subtitle mb-1 ">by: User</h6> -->
-                    <p class="card-title mb-1 text-muted">By.  <span class="">
+                    <p class="card-title mb-1 text-muted textSpacing">By.  <span class="">
                         <%=review.author.username%>
 
                       </span> </p>

@@ -1,15 +1,15 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Yelp-Camp</a>
+    <a class="navbar-brand titleSpacing" href="/campgrounds">Yelp-Camp</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link " aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/campgrounds">All Campgrounds</a>
-        <a class="nav-link" href="/campgrounds/new">New Campground</a>
+        <a class="nav-link titleSpacing" aria-current="page" href="/campgrounds">Home</a>
+        <a class="nav-link titleSpacing" href="/campgrounds">All Campgrounds</a>
+        <a class="nav-link titleSpacing" href="/campgrounds/new">New Campground</a>
 
       </div>
 
@@ -18,7 +18,7 @@
     <div class="navbar-nav ml-auto">
 
       <% if(!CurrentUser) {%> 
-      <a class="nav-link" href="/register">Sign up</a>
+      <a class="nav-link " href="/register">Sign up</a>
       <a class="nav-link" href="/login">Login</a>
       <%} else {%> 
         

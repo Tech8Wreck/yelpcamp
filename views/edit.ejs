@@ -5,7 +5,7 @@
     
 
     <div class="col-6 offset-3">
-        <h1>Edit Campground</h1>
+        <h1 class="titleSpacing">Edit Campground</h1>
 <div >
     <% for(let img of editCamp.images) {%>
         <img  src="<%= img.url %>"  class="img-thumbnail rounded" alt="...">
@@ -16,18 +16,18 @@
         <form action="/campgrounds/<%=editCamp._id%>/edit?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
 
             <div>
-                <label class="form-label" for="title">Title</label>
+                <label class="form-label titleSpacing" for="title">Title</label>
                 <input class="form-control" type="text" name="campground[title]" id="title" value="<%=editCamp.title%>" required>
             </div>
     <br>
             <div>
-                <label class="form-label" for="location">Location</label>
+                <label class="form-label titleSpacing" for="location">Location</label>
                 <input class="form-control" type="text" name="campground[location]" id="location" value="<%=editCamp.location%>" required>
             </div>
 
             <div class="my-3">
                 
-                <p class="mt-3 mb-0"><label for="Upload Image">Image</label></p>
+                <p class="mt-3 mb-0"><label class="titleSpacing" for="Upload Image">Image</label></p>
                 
                 <input class="mt-2" type="file" id="Upload Image" name="image" multiple disabled>
             

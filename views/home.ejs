@@ -1,15 +1,15 @@
 <% layout('layouts/boilerplate') -%>
 
-<div class="container-fluid mt-0" id="map" style="height: 400px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+<div class="container-fluid mt-0 shadows" id="map" style="height: 400px; ">
 
 </div>
 
 
-    <h1 class="my-4">All Campgrounds</h1>
+    <h1 class="my-4 titleSpacing">All Campgrounds</h1>
 
     <% for(let camp of camps) {%>
 
-    <div class="card mb-3 mt-4">
+    <div class="card mb-3 mt-4 shadows" >
         <div class="row">
             
 
@@ -21,9 +21,9 @@
             </div>
 
             <div class="col-md-8 card-body">
-                <h4 class="card-title"><%= camp.title %></h4>
-                <p class="card-text text-muted"><%= camp.location %> </p>
-                <p class="card-text"><%= camp.description %> </p>
+                <h4 class="card-title titleSpacing"><%= camp.title %></h4>
+                <p class="card-text text-muted titleSpacing"><%= camp.location %> </p>
+                <p class="card-text textSpacing"><%= camp.description %> </p>
                 <a class="btn btn-success" href="/campgrounds/<%= camp._id %> ">More</a>
             </div>
 
