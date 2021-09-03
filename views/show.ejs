@@ -1,0 +1,175 @@
+<% layout('layouts/boilerplate') -%>
+
+  <link href="/styles/stared.css" rel="stylesheet">
+
+
+  
+
+  
+
+  <div class="row mb-5">
+    <div class="col-md-4">
+      <div id='map' style='width: 400px; height: 700px;'></div>
+    </div>
+    <div class="col-md-4 ">
+      
+      <div class="card">
+        <% for(let img of showCamp.images) {%>
+          <img src="<%= img.url %>" class="image-fluid" alt="...">
+          <% } %>
+
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= showCamp.title %>
+              </h5>
+              <p class="card-text">
+                <%= showCamp.description %>
+              </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-muted">
+                <%= showCamp.location %>
+              </li>
+              <li class="list-group-item ">
+                Posted By: <%= showCamp.author.username %>
+              </li>
+              <li class="list-group-item">R<%= showCamp.price %> -per night</li>
+
+            </ul>
+
+            <div class="card">
+              <!--  -->
+
+              <div class="d-flex justify-content-start ">
+                <div class="py-1 px-2"><a class="btn btn-primary " href="/campgrounds">Back</a></div>
+
+                <% if(CurrentUser && showCamp.author.equals(CurrentUser)) {%>
+                  <div class="py-1 px-2"><a class="btn btn-info " href="/campgrounds/<%= showCamp._id %>/edit">Edit</a>
+                  </div>
+
+                  <div class="py-1 px-2">
+                    <form action="/campgrounds/<%= showCamp._id %>?_method=DELETE" method="POST">
+                      <button class="btn  btn-danger">Delete</button>
+                    </form>
+                  </div>
+                  <% } %>
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+      </div>
+    </div>
+
+    <div class="card col-md-4 ">
+      <% if(CurrentUser) {%>
+        <div class="border-bottom-0 mt-0">
+          <h5 class="pt-2">Add Review</h5>
+
+          <form action="/campgrounds/<%= showCamp._id %>/reviews" method="POST" novalidate class="needs-validation">
+
+            <div class="mb-3">
+              <!-- <label class="form-label mb-0 pb-0" for="rating">Rating</label>
+
+              <input class="form-range mt-0 pt-0" type="range" min="1" max="5" name="review[rating]" id="rating"> -->
+              <fieldset class="starability-basic">
+                <!-- <legend>Basic star rating:</legend> -->
+                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
+                  aria-label="No rating." />
+
+                <input type="radio" id="rate1" name="review[rating]" value="1" />
+                <label for="rate1">1 star.</label>
+
+                <input type="radio" id="rate2" name="review[rating]" value="2" />
+                <label for="rate2">2 stars.</label>
+
+                <input type="radio" id="rate3" name="review[rating]" value="3" />
+                <label for="rate3">3 stars.</label>
+
+                <input type="radio" id="rate4" name="review[rating]" value="4" />
+                <label for="rate4">4 stars.</label>
+
+                <input type="radio" id="rate5" name="review[rating]" value="5" />
+                <label for="rate5">5 stars.</label>
+
+                <span class="starability-focus-ring"></span>
+              </fieldset>
+
+
+
+            </div>
+
+
+            <div class="mb-3">
+              <label class="form-label mb-0" for="reviews">Comment</label>
+              <textarea class="form-control mt-0" name="review[body]" id="reviews" cols="30" rows="3"
+                required></textarea>
+            </div>
+
+            <button class="btn  btn-success">Save Review</button>
+          </form>
+        </div>
+        <% } %>
+          <h5 class="mt-2">Reviews</h5>
+
+          <% for(let review of showCamp.reviews) { %>
+            <% if(!showCamp.reviews.length){ %>
+              <p>None</p>
+              <% } %>
+                <div class=" mb-2">
+                  <div class="card-body">
+                    <!-- <h5 class="card-title">Card title</h5> -->
+                    <!-- <h6 class="card-subtitle mb-1 ">by: User</h6> -->
+                    <p class="card-title mb-2 "><span class="">
+                        <%=review.author.username%>
+
+                      </span> </p>
+
+
+
+                    <p class="starability-result" data-rating="<%=review.rating%>">
+
+                    </p>
+
+
+
+                    <p class="card-text mt-0 ">Comment: <span class="">
+                        <%=review.body%>
+
+
+                      </span> </p>
+
+                    <form action="/campgrounds/<%=showCamp._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                      <% if(CurrentUser && review.author.equals(CurrentUser._id)) {%>
+                        <button class="btn btn-sm btn-danger">Delete</button>
+                        <% } %>
+                    </form>
+                  </div>
+                </div>
+                <% } %>
+
+
+    </div>
+  </div>
+
+
+  <script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const campgrounds = <%- JSON.stringify(showCamp) %>
+  </script>
+
+
+  <script src="/javascripts/showPageMap.js"></script>

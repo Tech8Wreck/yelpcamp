@@ -1,0 +1,49 @@
+<% layout('layouts/boilerplate') -%>
+
+
+<div class="row">
+    
+
+    <div class="col-6 offset-3">
+        <h1>Add a New Campground</h1>
+        <form action="/campgrounds/new" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+
+            <div>
+                <label class="form-label" for="title">Title</label>
+                <input class="form-control" type="text" name="campground[title]" id="title" required>
+            </div>
+    <br>
+            <div>
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" name="campground[location]" id="location" required>
+            </div>
+
+            <!-- <div class="my-3">
+                <label class="form-label" for="image">Image Url</label>
+                <input class="form-control" type="text" name="campground[image]" id="image" placeholder="http://" required>
+            </div> -->
+            <p class="mt-3 mb-0"><label for="Upload Image">Image</label></p>
+            <input class="mt-2" type="file" id="Upload Image" name="image" multiple>
+
+            <div class="my-3">
+                <label class="form-label" for="price">Price</label>
+                <input class="form-control" type="number" name="campground[price]" id="price"  required>
+            </div>
+
+            <div>
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" name="campground[description]" id="description" cols="30" rows="5" required></textarea>
+            </div>
+    
+            <button class="btn btn-secondary my-3">Add Camp</button>
+        </form>
+       
+            <a class="btn btn-info" href="/campgrounds">Cancel</a>
+
+    </div>
+</div>
+
+    
+    
+    
+
