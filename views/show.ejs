@@ -26,14 +26,16 @@
                 <%= showCamp.description %>
               </p>
             </div>
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush ">
               <li class="list-group-item text-muted">
-                <%= showCamp.location %>
+                Location. <%= showCamp.location %>
               </li>
-              <li class="list-group-item ">
-                Posted By: <%= showCamp.author.username %>
+              <li class="list-group-item text-muted">
+                By. <%= showCamp.author.username %>
               </li>
-              <li class="list-group-item">R<%= showCamp.price %> -per night</li>
+              <li class="list-group-item text-muted">
+                Price/night. <%= showCamp.price %> 
+              </li>
 
             </ul>
 
@@ -75,7 +77,7 @@
     </div>
 
     <div class="card col-md-4 ">
-      <% if(CurrentUser) {%>
+    <%   if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
           <h5 class="pt-2">Add Review</h5>
 
@@ -122,31 +124,33 @@
             <button class="btn  btn-success">Save Review</button>
           </form>
         </div>
-        <% } %>
+         <%}%>
           <h5 class="mt-2">Reviews</h5>
 
           <% for(let review of showCamp.reviews) { %>
             <% if(!showCamp.reviews.length){ %>
               <p>None</p>
               <% } %>
-                <div class=" mb-2">
+
+              <div class="border border-info mb-3">
+                <div class=" m-0">
                   <div class="card-body">
                     <!-- <h5 class="card-title">Card title</h5> -->
                     <!-- <h6 class="card-subtitle mb-1 ">by: User</h6> -->
-                    <p class="card-title mb-2 "><span class="">
+                    <p class="card-title mb-1 text-muted">By.  <span class="">
                         <%=review.author.username%>
 
                       </span> </p>
 
 
 
-                    <p class="starability-result" data-rating="<%=review.rating%>">
+                    <p class="starability-result mb-1" data-rating="<%=review.rating%>">
 
                     </p>
 
 
 
-                    <p class="card-text mt-0 ">Comment: <span class="">
+                    <p class="card-text m-0 "><span class="">
                         <%=review.body%>
 
 
@@ -158,6 +162,7 @@
                         <% } %>
                     </form>
                   </div>
+                </div>
                 </div>
                 <% } %>
 

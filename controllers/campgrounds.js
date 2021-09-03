@@ -43,7 +43,7 @@ module.exports.createNewCampground = async (req, res) => {
     }).send()
     // console.log(geoData.body.features[0].geometry.coordinates)
     // res.send('geoData!!!!!')
-console.log(req.files)
+// console.log(req.files)
     const newcamp = new Campground(req.body.campground);
     newcamp.images = req.files.map(f => ({url: f.path, filename: f.filename}))
     newcamp.author = req.user._id;
