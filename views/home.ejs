@@ -1,21 +1,21 @@
 <% layout('layouts/boilerplate') -%>
 
-<div id="map" style="width: 100%; height: 500px">
+<div class="container-fluid mt-0" id="map" style="height: 400px">
 
 </div>
 
 
-    <h1>All Campgrounds</h1>
+    <h1 class="my-4">All Campgrounds</h1>
 
     <% for(let camp of camps) {%>
 
-    <div class="card mb-3">
+    <div class="card mb-3 mt-4">
         <div class="row">
             
 
-            <div class="col-md-4">
+            <div  class="col-md-4">
                 <% for(let img of camp.images) {%>
-                    <img class="img-fluid" src="<%= img.url %>" alt="">
+                    <img id="showImage" class="" src="<%= img.url %>" alt="">
                     <% } %> 
                 
             </div>
