@@ -32,6 +32,7 @@ module.exports.getLoginForm = (req, res) => {
 
 
 module.exports.loginUser = (req, res) => {
+    console.log(req.session.returnLink)
     const reutrnLink = req.session.returnLink || '/campgrounds'
     req.flash('success', 'Welcome back')
     delete req.session.returnLink;
