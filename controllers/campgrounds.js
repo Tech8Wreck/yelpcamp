@@ -4,6 +4,11 @@ const mapToken = process.env.MAPBOX_TOKEN
 
 const geocoder = mbxGeocoding({ accessToken: mapToken})
 
+
+module.exports.indexes = async (req, res) => {
+    res.render('welcome')
+}
+
 module.exports.index = async (req, res) => {
     const camps = await Campground.find({ });
     res.render('home', { camps });

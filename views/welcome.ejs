@@ -1,37 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand titleSpacing" href="/campgrounds">Yelp-Camp</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link titleSpacing" aria-current="page" href="/campgrounds">Home</a>
-          <a class="nav-link titleSpacing" href="/campgrounds">All Campgrounds</a>
-          <a class="nav-link titleSpacing" href="/campgrounds/new">New Campground</a>
-  
+    <!--  -->
+    <link rel="stylesheet" href="../styles/welcomepage.css">
+</head>
+
+<body class="">
+
+
+    <div class=" h-100 d-flex flex-column">
+        <div class="mb-auto">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark opacity-50">
+        <div class="container ">
+            <a class="navbar-brand titleSpacing text-white" href="/campgrounds/index">Yelp-Camp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link titleSpacing text-white" aria-current="page" href="/campgrounds">Home</a>
+                    <a class="nav-link titleSpacing text-white" href="/campgrounds">All Campgrounds</a>
+                    <a class="nav-link titleSpacing text-white" href="/campgrounds/new">New Campground</a>
+                    <!-- <link rel="stylesheet" href="../styles/welcomepage.css"> -->
+
+                </div>
+
+            </div>
+
+            <div class="navbar-nav ">
+
+                <% if(!CurrentUser) {%>
+                    <a class="nav-link text-white" href="/register">Sign up</a>
+                    <a class="nav-link text-white" href="/login">Login</a>
+                    <%} else {%>
+
+                        <a class="nav-link text-white" href="/logout">Logout</a>
+
+                        <% } %>
+            </div>
         </div>
-  
-      </div>
-  
-      <div class="navbar-nav ml-auto">
-  
-        <% if(!CurrentUser) {%> 
-        <a class="nav-link " href="/register">Sign up</a>
-        <a class="nav-link" href="/login">Login</a>
-        <%} else {%> 
-          
-              <a class="nav-link" href="/logout">Logout</a> 
-              
-           
-  
-  
-        
-  <% } %> 
-  
-      </div>
+    </nav>
+</div>
+
+    <div class="container ">
+
+        <main class=" text-center ">
+            <h1 class="text-white">Yelp-Camp</h1>
+            <p id="para" class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+                quisquam distinctio ullam rem provident nostrum quam minima ad ex quas esse numquam qui, quis commodi
+                nobis veniam dignissimos quasi labore.</p>
+            <a href="/campgrounds" class="btn btn-lg btn-danger">Get Started</a>
+        </main>
+
+
     </div>
-  </nav>
+
+    <!-- FOOTER             FOOTER              FOOTER -->
+    <div class="mt-auto ">
+        <footer class="footer text-white  text-center bg-dark mb-0 opacity-50">
+            <p><span class="">&copy; Yelp-Camp 2021 - tech8wreck</span></p>
+        </footer>
+    </div>
+   
+</div>
+<!-- <div class=" text-center">
+    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ducimus! Recusandae rem debitis quam vitae hic, error id quisquam laboriosam saepe expedita? Quae, impedit possimus repellat sed rem quo fuga?</p>
+</div> -->
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+        integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

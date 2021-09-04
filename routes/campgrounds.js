@@ -7,12 +7,13 @@ const { campgroundSchema, validateCampground } = require('../validationSchema/sc
 const isValidated = require('../utilities/isValidated')
 const valid = require('../utilities/isOwner');
 const controllers = require('../controllers/campgrounds')
+
 const {storage} = require('../cloudinary')
 const multer = require('multer')
 const upload = multer({ storage })
 
 
-
+router.get('/index', catchAsync(controllers.indexes))
 router.get('', catchAsync(controllers.index))
 
 router.route('/new')

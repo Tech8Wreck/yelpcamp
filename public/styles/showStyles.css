@@ -1,6 +1,10 @@
 #showImage{
-    width: 400px;
+
+    background-size: cover;
+    background-position: center;
+    width: auto;
     height: 300px;
+    
 }
 
 .shadows{

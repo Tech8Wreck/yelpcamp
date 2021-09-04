@@ -7,15 +7,15 @@
 
   
 
-  <div class="row mb-5 shadows">
-    <div class="col-md-4">
-      <div id='map' style='width: 400px; height: 640px;'></div>
+  <div class="row mb-5 ">
+    <div class="col-md-4 shadows">
+      <div id='map' style='width: auto; height: 640px;' class="p-0"></div>
     </div>
     <div class="col-md-4 ">
       
       <div class="card">
         <% for(let img of showCamp.images) {%>
-          <img src="<%= img.url %>" id="showImage" class="" alt="...">
+          <img src="<%= img.url %>" id="showImage" class="p-0" alt="...">
           <% } %>
 
             <div class="card-body">
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div class="card col-md-4 shadows">
+    <div class="card col-md-4 shadows" style="width: 400px;">
     <%   if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
           <h5 class="pt-2 titleSpacing">Add Review</h5>
