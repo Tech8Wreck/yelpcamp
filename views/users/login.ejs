@@ -1,18 +1,26 @@
 <% layout('layouts/boilerplate') -%>
 
+    <div class="d-flex ">
 
-    
-    <form action="/login" method="POST" novalidate class="needs-validation ">
-        <h1 class="mb-4 titleSpacing">Login</h1>
-        <div class="mb-3">
-            <label class="form-label textSpacing" for="username">Username</label>
-            <input class="form-control" type="text" name="username" id="username" required>
+        <div class="col-sm-4 offset-4 border border-warning rounded shadows">
+
+            
+            <form action="/login" method="POST" novalidate class="needs-validation p-4">
+                <h1 class="mb-4 titleSpacing">Login</h1>
+                <div class="mb-3">
+                    <label class="form-label textSpacing" for="username">Username</label>
+                    <input class="form-control" type="text" name="username" id="username" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label textSpacing" for="password">Password</label>
+                    <input class="form-control" type="password" name="password" id="password" required>
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-lg btn-success ">Login</button>
+                  </div>
+                
+            </form>
+
         </div>
-        
-        <div class="mb-3">
-            <label class="form-label textSpacing" for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" required>
-        </div>
-<button class="btn btn-success ">Login</button>
-    </form>
-    
+    </div>
