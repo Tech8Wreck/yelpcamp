@@ -3,11 +3,11 @@
   <link href="/styles/stared.css" rel="stylesheet">
 
 
-  <div class="d-flex flex-row justify-content-evenly">
+  <div class="d-flex flex-column flex-md-row justify-content-evenly">
 
 
 
-    <div class="col-sm-4 mb-5 shadows">
+    <div class="col-12 col-md-4 mb-5 shadows">
       <!-- <div class=" shadows"> -->
         <div id='map' class="p-0">
         
@@ -16,7 +16,7 @@
     </div>
 
     <!-- start of card -->
-    <div class="col-sm-4 mx-2" style="height: 630px;">
+    <div class="col-12  col-md-4 mx-2" style="height: 630px;">
 
       <div class="card">
         <% for(let img of showCamp.images) {%>
@@ -75,7 +75,7 @@
 
     <!-- end of card -->
 
-    <div class="card col-sm-4 shadows border border-top" style="height: 630px;" >
+    <div class="card col-12 col-md-4 p-2  shadows border border-top" style="height: 630px;" >
       <% if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
           <h5 class="pt-2 titleSpacing">Add Review</h5>
@@ -116,16 +116,17 @@
 
             <div class="mb-3">
               <label class="form-label mb-0 textSpacing" for="reviews">Comment</label>
-              <textarea class="form-control mt-0 textSpacing" name="review[body]" id="reviews" cols="30" rows="3"
+              <textarea class="form-control mt-0 textSpacing shadows" name="review[body]" id="reviews" cols="30" rows="3"
                 required></textarea>
             </div>
 
-            <button class="btn  btn-success">Save Review</button>
+            <button class="btn btn-sm btn-success p-1">Save Review</button>
           </form>
         </div>
         <%}%>
-          <h5 class="mt-2 titleSpacing px-2 ">Reviews</h5>
-          <hr>
+        <hr>
+          <h5 class="mt-1 titleSpacing px-2 ">Reviews</h5>
+          
 
           <% if(!showCamp.reviews[0]){ %>
             <p class="px-2">None Reviews</p>
@@ -133,34 +134,26 @@
           <% for(let review of showCamp.reviews) { %>
             
 
-                <div class="border border-info mb-3">
+                <div class="border shadows mb-3">
                   <div class=" m-0">
-                    <div class="card-body">
+                    <div class="card-body p-1">
                       <!-- <h5 class="card-title">Card title</h5> -->
                       <!-- <h6 class="card-subtitle mb-1 ">by: User</h6> -->
-                      <p class="card-title mb-1 text-muted textSpacing">By. <span class="">
-                          <%=review.author.username%>
+                      
+                      <p class="starability-result mb-1" data-rating="<%=review.rating%>"></p>
 
-                        </span> </p>
-
-
-
-                      <p class="starability-result mb-1" data-rating="<%=review.rating%>">
-
-                      </p>
-
-
+                      <p class="card-title mb-1 text-muted textSpacing"> <span class="">
+                        <%=review.author.username%>
+                      </span> </p>
 
                       <p class="card-text m-0 "><span class="">
                           <%=review.body%>
-
-
                         </span> </p>
 
                       <form action="/campgrounds/<%=showCamp._id%>/reviews/<%=review._id%>?_method=DELETE"
                         method="POST">
                         <% if(CurrentUser && review.author.equals(CurrentUser._id)) {%>
-                          <button class="btn btn-sm btn-danger">Delete</button>
+                          <button class="btn btn-sm btn-danger p-1">Delete</button>
                           <% } %>
                       </form>
                     </div>
