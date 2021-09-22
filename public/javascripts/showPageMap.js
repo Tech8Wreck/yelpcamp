@@ -1,5 +1,4 @@
-// const campground = require("../../models/campground");
-console.log(campgrounds)
+
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
