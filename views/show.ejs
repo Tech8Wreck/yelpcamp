@@ -16,9 +16,9 @@
     </div>
 
     <!-- start of card -->
-    <div class="col-md-4 mx-2" style="height: 630px;">
+    <div class="col-md-4 m-md-2" style="height: 630px;">
 
-      <div class="card">
+      <div class="card ">
         <% for(let img of showCamp.images) {%>
           <img id="showImage" src="<%= img.url %>" class="p-0 card-img-top" alt="...">
           <!--id="showImage"-->
@@ -75,7 +75,7 @@
 
     <!-- end of card -->
 
-    <div class="card col-md-4 shadows border border-top" style="height: 630px;" >
+    <div class="card col-md-4 shadows border p-3 border-top" style="height: 630px;" >
       <% if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
           <h5 class="pt-2 titleSpacing">Add Review</h5>
@@ -126,7 +126,7 @@
         <%}%>
           <h5 class="mt-2 titleSpacing px-2 ">Reviews</h5>
           <hr>
-
+<div class="overflow-auto">
           <% if(!showCamp.reviews[0]){ %>
             <p class="px-2">None Reviews</p>
             <% } %>
@@ -140,22 +140,14 @@
                       <!-- <h6 class="card-subtitle mb-1 ">by: User</h6> -->
                       <p class="card-title mb-1 text-muted textSpacing">By. <span class="">
                           <%=review.author.username%>
-
                         </span> </p>
 
-
-
                       <p class="starability-result mb-1" data-rating="<%=review.rating%>">
-
                       </p>
-
-
 
                       <p class="card-text m-0 "><span class="">
                           <%=review.body%>
-
-
-                        </span> </p>
+                      </span> </p>
 
                       <form action="/campgrounds/<%=showCamp._id%>/reviews/<%=review._id%>?_method=DELETE"
                         method="POST">
@@ -168,7 +160,7 @@
                 </div>
                 <% } %>
 
-
+              </div>
     </div>
 
 

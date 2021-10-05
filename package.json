@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "DevStart": "nodemon app.js"
   },
   "author": "tech8wreck",
   "license": "ISC",
