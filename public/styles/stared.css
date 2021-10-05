@@ -188,3 +188,8 @@
       display: none;
     }
   }
+
+
+  .card{
+    max-height: 630px;
+  }
