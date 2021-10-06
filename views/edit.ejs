@@ -1,55 +1,57 @@
-
 <% layout('layouts/boilerplate') -%>
 
-<div class="row">
-    
+    <div class="d-flex offset-3 border p-2 rounded shadows mb-4" style="max-width: 50%;">
 
-    <div class="col-6 offset-3">
-        <h1 class="titleSpacing">Edit Campground</h1>
-<div >
-    <% for(let img of editCamp.images) {%>
-        <img  src="<%= img.url %>"  class="img-thumbnail rounded" alt="...">
-        <% } %>
 
-</div>
-       
-        <form action="/campgrounds/<%=editCamp._id%>/edit?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
-
+        <div class="col-12">
+            <h1 class="titleSpacing">Edit Campground</h1>
             <div>
-                <label class="form-label titleSpacing" for="title">Title</label>
-                <input class="form-control" type="text" name="campground[title]" id="title" value="<%=editCamp.title%>" required>
-            </div>
-    <br>
-            <div>
-                <label class="form-label titleSpacing" for="location">Location</label>
-                <input class="form-control" type="text" name="campground[location]" id="location" value="<%=editCamp.location%>" required>
+                <% for(let img of editCamp.images) {%>
+                    <img src="<%= img.url %>" class="img-thumbnail rounded" alt="...">
+                    <% } %>
+
             </div>
 
-            <div class="my-3">
-                
-                <p class="mt-3 mb-0"><label class="titleSpacing" for="Upload Image">Image</label></p>
-                
-                <input class="mt-2" type="file" id="Upload Image" name="image" multiple disabled>
+            <form action="/campgrounds/<%=editCamp._id%>/edit?_method=PUT" method="POST" novalidate
+                class="needs-validation" enctype="multipart/form-data">
+
+                <div>
+                    <label class="form-label titleSpacing" for="title"><Strong>Title</Strong></label>
+                    <input class="form-control" type="text" name="campground[title]" id="title"
+                        value="<%=editCamp.title%>" required>
+                </div>
+                <br>
+                <div>
+                    <label class="form-label titleSpacing" for="location"><strong>Location</strong></label>
+                    <input class="form-control" type="text" name="campground[location]" id="location"
+                        value="<%=editCamp.location%>" required>
+                </div>
+
+                <div class="my-3">
+
+                    <p class="mt-3 mb-0"><label class="titleSpacing" for="Upload Image"><strong>Image</strong></label></p>
+
+                    <input class="mt-2" type="file" id="Upload Image" name="image" multiple disabled>
+
+                </div>
+
+                <div>
+                    <label class="form-label" for="description"><strong>Description</strong></label>
+                    <textarea class="form-control" name="campground[description]" id="description" cols="30" rows="5"
+                        required><%=editCamp.description%>"</textarea>
+                </div>
+
+                <div>
+                    <label class="form-label" for="price"><strong>Price</strong></label>
+                    <input class="form-control" type="number" name="campground[price]" id="price"
+                        value="<%=editCamp.price%>" required>
+                </div>
+
+                <button class="btn btn-success my-3">Save</button>
+                <a class="btn btn-secondary " href="/campgrounds/<%=editCamp._id%>">Cancel</a>
+            </form>
+
             
-            </div>
 
-            <div>
-                <label class="form-label" for="description">Description</label>
-                <textarea class="form-control" name="campground[description]" id="description" cols="30" rows="5" required><%=editCamp.description%>"</textarea>
-            </div>
-
-            <div>
-                <label class="form-label" for="price">Price</label>
-                <input class="form-control" type="number" name="campground[price]" id="price"  value="<%=editCamp.price%>" required>
-            </div>
-    
-            <button class="btn btn-success my-3">Save</button>
-        </form>
-       
-            <a class="btn btn-secondary " href="/campgrounds/<%=editCamp._id%>">Cancel</a>
-
+        </div>
     </div>
-</div>
-
-   
-    
