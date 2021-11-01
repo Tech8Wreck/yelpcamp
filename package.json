@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "DevStart": "nodemon app.js"
+    "DevStart": "nodemon app.js",
+    "start": "node app.js"
   },
   "author": "tech8wreck",
   "license": "ISC",
