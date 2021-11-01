@@ -71,7 +71,7 @@
 
     <!-- end of card -->
 
-    <div class="card col-md-4 shadows border p-3 border-top" style="height: 630px;" >
+    <div class="card col-md-4 shadows border p-3 border-top mb-5" style="height: 630px;" id="reviews">
       <% if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
           <h5 class="pt-2 titleSpacing">Add Review</h5>
@@ -110,7 +110,7 @@
             </div>
 
 
-            <div class="mb-3" id="reviews">
+            <div class="mb-3" >
               <label class="form-label mb-0 textSpacing" for="reviews">Comment</label>
               <textarea class="form-control mt-0 textSpacing" name="review[body]" id="reviews" cols="30" rows="3"
                 required></textarea>
