@@ -85,7 +85,7 @@ app.use((req, res, next) =>{
 })
 
 
-app.use('/campgrounds', campgrounds)
+app.use('', campgrounds)
 app.use('', reviews)
 app.use('', users)
 

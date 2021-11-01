@@ -13,10 +13,11 @@ const multer = require('multer')
 const upload = multer({ storage })
 
 
-router.get('/index', catchAsync(controllers.indexes))
-router.get('', catchAsync(controllers.index))
+router.get('', catchAsync(controllers.indexes))
 
-router.route('/new')
+router.get('/campgrounds', catchAsync(controllers.index))
+
+router.route('/campgrounds/new')
 .get(isValidated, controllers.renderNewForm)
 .post( isValidated, upload.array('image'), validateCampground, catchAsync(controllers.createNewCampground))
 // .post(upload.single('image'), (req, res) =>{
@@ -25,12 +26,12 @@ router.route('/new')
 // })
 
 
-router.route('/:id')
+router.route('/campgrounds/:id')
     .delete( isValidated, catchAsync(controllers.deleteCampground))
     .get( catchAsync(controllers.showCampground))
 
 
-router.route('/:id/edit')
+router.route('/campgrounds/:id/edit')
     .get( isValidated, catchAsync(controllers.getEditForm))
     .put( isValidated, upload.array('image'),  validateCampground, catchAsync(controllers.editCampground))
 
