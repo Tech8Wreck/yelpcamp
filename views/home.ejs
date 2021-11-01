@@ -1,6 +1,6 @@
 <% layout('layouts/boilerplate') -%>
 
-<div class="container-fluid mt-0 shadows" id="map" style="max-height: 400px; ">
+<div class="container-fluid mt-0 shadows" id="map" style="max-height: 400px; min-width: 300px;">
 
 </div>
 
@@ -9,18 +9,18 @@
 
     <% for(let camp of camps) {%>
 
-    <div class="card my-3 shadows"  >
+    <div class="card my-3 shadows" style="min-width: 300px;" >
         <div class="row">
             
 
-            <div  class="col-md-4">
+            <div  class="col-md-4" >
                 <% for(let img of camp.images) {%>
-                    <img id="showImage" style="width: -webkit-fill-available;" class="img-fluid img-thumbnail" src="<%= img.url %>" alt="">
+                    <img id="showImage" style="width: -webkit-fill-available; " class="img-fluid img-thumbnail" src="<%= img.url %>" alt="">
                     <% } %> 
                 
             </div>
 
-            <div class="col-md-8 card-body">
+            <div class="col-md-8 card-body " >
                 <h4 class="card-title titleSpacing"><%= camp.title %></h4>
                 <p class="card-text text-muted titleSpacing"><%= camp.location %> </p>
                 <p class="card-text textSpacing"><%= camp.description %> </p>

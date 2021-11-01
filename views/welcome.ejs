@@ -18,61 +18,65 @@
 
     <div class=" h-100 d-flex flex-column">
         <div class="mb-auto">
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark opacity-50">
-        <div class="container ">
-            <a class="navbar-brand titleSpacing text-white" href="/campgrounds/index">Yelp-Camp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link titleSpacing text-white" aria-current="page" href="/campgrounds">Home</a>
-                    <a class="nav-link titleSpacing text-white" href="/campgrounds">All Campgrounds</a>
-                    <a class="nav-link titleSpacing text-white" href="/campgrounds/new">New Campground</a>
-                    <!-- <link rel="stylesheet" href="../styles/welcomepage.css"> -->
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark opacity-50">
+                <div class="container ">
+                    <a class="navbar-brand titleSpacing text-white" href="/campgrounds/index">Yelp-Camp</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link titleSpacing text-white" aria-current="page" href="/campgrounds">Home</a>
+                            <a class="nav-link titleSpacing text-white" href="/campgrounds">All Campgrounds</a>
+                            <a class="nav-link titleSpacing text-white" href="/campgrounds/new">New Campground</a>
+                            <!-- <link rel="stylesheet" href="../styles/welcomepage.css"> -->
 
+                            <div class=" d-flex">
+                                <% if(!CurrentUser) {%>
+                                    <a class="nav-link text-white border  mx-2  border-light" style="max-width: 60px;" href="/register">Sign up</a>
+                                    <a class="nav-link border  mx-2 text-white border-light" style="max-width: 60px;" href="/login">Login</a>
+                                    <%} else {%>
+        
+                                        <a class="nav-link text-white border-light" href="/logout">Logout</a>
+        
+                                        <% } %>
+                        
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
                 </div>
-
-            </div>
-
-            <div class="navbar-nav ">
-
-                <% if(!CurrentUser) {%>
-                    <a class="nav-link text-white border  mx-2  border-light" href="/register">Sign up</a>
-                    <a class="nav-link border  mx-2 text-white border-light" href="/login">Login</a>
-                    <%} else {%>
-
-                        <a class="nav-link text-white border-light" href="/logout">Logout</a>
-
-                        <% } %>
-            </div>
+            </nav>
         </div>
-    </nav>
-</div>
 
-    <div class="container ">
+        <div class="container ">
 
-        <main class=" text-center ">
-            <h1 class="text-white">Yelp-Camp</h1>
-            <p id="para" class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                quisquam distinctio ullam rem provident nostrum quam minima ad ex quas esse numquam qui, quis commodi
-                nobis veniam dignissimos quasi labore.</p>
-            <a href="/campgrounds" class="btn btn-lg btn-danger opacity-75">Get Started</a>
-        </main>
+            <main class=" text-center ">
+                <h1 class="text-white">Yelp-Camp</h1>
+                <p id="para" class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vitae
+                    quisquam distinctio ullam rem provident nostrum quam minima ad ex quas esse numquam qui, quis
+                    commodi
+                    nobis veniam dignissimos quasi labore.</p>
+                <a href="/campgrounds" class="btn btn-lg btn-danger opacity-75">Get Started</a>
+            </main>
 
+
+        </div>
+
+        <!-- FOOTER             FOOTER              FOOTER -->
+        <div class="mt-auto ">
+            <footer class="footer text-white  text-center bg-dark mb-0 opacity-50">
+                <p style="margin: 0"><span class="">&copy; Yelp-Camp 2021 - tech8wreck</span></p>
+            </footer>
+        </div>
 
     </div>
-
-    <!-- FOOTER             FOOTER              FOOTER -->
-    <div class="mt-auto ">
-        <footer class="footer text-white  text-center bg-dark mb-0 opacity-50">
-            <p style="margin: 0"><span class="">&copy; Yelp-Camp 2021 - tech8wreck</span></p>
-        </footer>
-    </div>
-   
-</div>
-<!-- <div class=" text-center">
+    <!-- <div class=" text-center">
     <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ducimus! Recusandae rem debitis quam vitae hic, error id quisquam laboriosam saepe expedita? Quae, impedit possimus repellat sed rem quo fuga?</p>
 </div> -->
 
