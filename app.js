@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 
-console.log(process.env.SECRET)
+
 
 
 
@@ -42,13 +42,7 @@ mongoose.connect(database, {
         console.log(err);
     })
 
-// OR   OR  OR OR   OR          OR          OR          OR          OR
 
-// const db = mongoose.connection;
-// db.on('error', console.error.bind(console,'connection error:'));
-// db.once('open',()=>{
-//     console.log('database connected');
-// })
 
 app.engine('ejs', ejsMate)
 morgan('tiny')
@@ -91,102 +85,11 @@ app.use((req, res, next) =>{
 })
 
 
-
-
-
-
-
-
-
-
-
-// fake user testing passport
-
-app.get('/fakeuser', async (req, res) =>{
-    const user = new User({email: 'nico@gmail.com', username: 'nico'})
-    const newUser = await User.register(user, 'chicken')
-    res.send(newUser)
-})
-
-
-
-
 app.use('/campgrounds', campgrounds)
 app.use('', reviews)
 app.use('', users)
-// Exported from the schema
-
-// const campgroundSchema = Joi.object({
-//     campground: Joi.object({
-//         title: Joi.string().required(),
-//         price: Joi.number().required().min(0),
-//         image: Joi.string().required(),
-//         description: Joi.string().required(),
-//         location: Joi.string().required()
-//     }).required()
-// })
-
-// const reviewSchema = Joi.object({
-//     review: Joi.object({
-//         rating: Joi.number().required(),
-//         body: Joi.string().required()
-//     }).required()
-// })
-
-// exported from the schema module
-
-// validation  middleware
-
-// const validateCampground = (req, res, next) =>{
-//     const budy = req.body;
-//     // console.log(budy)
-//     const {error} = campgroundSchema.validate(budy);
-//     // console.log(result)
-//     if(error){
-//         const msg = error.details.map(el => el.message).join(',')
-//         throw new ExpressError(msg, 400)
-//     }else{
-//         next()
-//     }
-// }
-
-// const validateReview = (req, res, next) =>{
-//     const {error} = reviewSchema.validate(req.body);
-//     if(error){
-//         const msg = error.details.map(el => el.message).join(',')
-//         throw new ExpressError(msg, 400)
-//     }else{
-//         next()
-//     }
-// }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.use((err, req, res, next)=>{
-// console.log('*********************************')
-// console.log('************ERROR**************')
-// console.log('********************************')
-// console.log(res)
-// })
 
 app.all('*',(err, req, next) =>{
 next(new ExpressError('not found',404))
@@ -199,7 +102,7 @@ res.status(statusCode).send(message);
 
 
 
-const port = 80;
+const port = process.env.PORT;
 app.listen(port, () => {
     console.log('server started');
 })
