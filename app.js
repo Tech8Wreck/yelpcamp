@@ -28,7 +28,7 @@ const User = require('./models/user')
 const database = process.env.dbURL
 
 // 'mongodb://localhost:27017/yelp-camp'
-mongoose.connect(database, {
+mongoose.connect('mongodb://localhost:27017/yelp-camp', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -102,7 +102,7 @@ res.status(statusCode).send(message);
 
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log('server started');
 })
