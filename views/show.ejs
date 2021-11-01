@@ -9,14 +9,14 @@
 
     <div class="col-md-4 mb-5 shadows">
       <!-- <div class=" shadows"> -->
-        <div id='map' class="p-0">
-        
-        </div>
+      <div id='map' class="p-0">
+
+      </div>
       <!-- </div> -->
     </div>
 
     <!-- start of card -->
-    <div class="col-md-4 m-md-2 mb-3" >
+    <div class="col-md-4 m-md-2 mb-3">
 
       <div class="card" style="min-height: 625px; max-height: 625px;">
         <% for(let img of showCamp.images) {%>
@@ -30,13 +30,13 @@
               <h5 class="card-title titleSpacing " style="margin-bottom: 35px;">
                 <%= showCamp.title %>
               </h5>
-              <p class="card-text textSpacing "  >
+              <p class="card-text textSpacing ">
                 <%= showCamp.description %>
               </p>
             </div>
 
 
-            <ul class="list-group list-group-flush " >
+            <ul class="list-group list-group-flush ">
               <li class="list-group-item text-muted textSpacing">
                 Location. <%= showCamp.location %>
               </li>
@@ -57,7 +57,8 @@
               <div class="py-1 px-2"><a class="btn btn-primary " href="/campgrounds">Back</a></div>
 
               <% if(CurrentUser && showCamp.author.equals(CurrentUser)) {%>
-                <div class="py-1 px-2"><a class="btn btn-info " href="/campgrounds/<%= showCamp._id %>/edit">Edit</a></div>
+                <div class="py-1 px-2"><a class="btn btn-info " href="/campgrounds/<%= showCamp._id %>/edit">Edit</a>
+                </div>
 
                 <div class="py-1 px-2">
                   <form action="/campgrounds/<%= showCamp._id %>?_method=DELETE" method="POST">
@@ -71,7 +72,7 @@
 
     <!-- end of card -->
 
-    <div class="card col-md-4 shadows border p-3 border-top mb-5"  id="reviews">
+    <div class="card col-md-4 shadows border p-3 border-top mb-5" id="reviews">
       <% if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
           <h5 class="pt-2 titleSpacing">Add Review</h5>
@@ -110,9 +111,9 @@
             </div>
 
 
-            <div class="mb-3" >
+            <div class="mb-3">
               <label class="form-label mb-0 textSpacing" for="reviews">Comment</label>
-              <textarea class="form-control mt-0 textSpacing" name="review[body]" id="reviews" cols="30" rows="3"
+              <textarea class="form-control mt-0 textSpacing" name="review[body]" id="reviews" cols="10" rows="1"
                 required></textarea>
             </div>
 
@@ -122,41 +123,41 @@
         <%}%>
           <h5 class="mt-2 titleSpacing px-2 ">Reviews</h5>
           <hr>
-<div class="overflow-auto">
-          <% if(!showCamp.reviews[0]){ %>
-            <p class="px-2">None Reviews</p>
-            <% } %>
-          <% for(let review of showCamp.reviews) { %>
-            
+          <div class="overflow-auto">
+            <% if(!showCamp.reviews[0]){ %>
+              <p class="px-2">None Reviews</p>
+              <% } %>
+                <% for(let review of showCamp.reviews) { %>
 
-                <div class="border-start border-secondary mb-3">
-                  <div class=" m-0">
-                    <div class="card-body">
-                      <!-- <h5 class="card-title">Card title</h5> -->
-                      <!-- <h6 class="card-subtitle mb-1 ">by: User</h6> -->
-                      <p class="card-title mb-1 text-muted textSpacing">By. <span class="">
-                          <%=review.author.username%>
-                        </span> </p>
 
-                      <p class="starability-result mb-1" data-rating="<%=review.rating%>">
-                      </p>
+                  <div class="border-start border-secondary mb-3">
+                    <div class=" m-0">
+                      <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <!-- <h6 class="card-subtitle mb-1 ">by: User</h6> -->
+                        <p class="card-title mb-1 text-muted textSpacing">By. <span class="">
+                            <%=review.author.username%>
+                          </span> </p>
 
-                      <p class="card-text m-0 "><span class="">
-                          <%=review.body%>
-                      </span> </p>
+                        <p class="starability-result mb-1" data-rating="<%=review.rating%>">
+                        </p>
 
-                      <form action="/campgrounds/<%=showCamp._id%>/reviews/<%=review._id%>?_method=DELETE"
-                        method="POST">
-                        <% if(CurrentUser && review.author.equals(CurrentUser._id)) {%>
-                          <button class="btn btn-sm btn-danger">Delete</button>
-                          <% } %>
-                      </form>
+                        <p class="card-text m-0 "><span class="">
+                            <%=review.body%>
+                          </span> </p>
+
+                        <form action="/campgrounds/<%=showCamp._id%>/reviews/<%=review._id%>?_method=DELETE"
+                          method="POST">
+                          <% if(CurrentUser && review.author.equals(CurrentUser._id)) {%>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <% } %>
+                        </form>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <% } %>
+                  <% } %>
 
-              </div>
+          </div>
     </div>
 
 
@@ -169,7 +170,7 @@
 
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campgrounds = <%- JSON.stringify(showCamp) %>
+    const campgrounds = <% - JSON.stringify(showCamp) %>
   </script>
 
 
