@@ -22,7 +22,8 @@
 }
 
 .titleSpacing{
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    inline-size: auto;
 }
 
 .textSpacing{
