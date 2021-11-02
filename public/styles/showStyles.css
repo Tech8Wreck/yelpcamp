@@ -12,7 +12,7 @@
     width: auto;
 }
 
-#reviews{
+#reviewss{
     /* height: 630px; */
 }
 
@@ -21,8 +21,8 @@
         height: 400px;
     }
 
-    #reviews{
-        height: 400px;
+    #reviewss{
+        height: 450px;
     }
 }
 

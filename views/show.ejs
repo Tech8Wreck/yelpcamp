@@ -7,12 +7,12 @@
 
 
 
-    <div class="col-md-4 mb-5 shadows">
-
-      <div id="map" class="p-0">
-
-      </div>
-
+    <div class="col-12 col-md-4 mb-5 shadows">
+      <!-- <div class=" shadows"> -->
+        <div id='map' class="p-0">
+        
+        </div>
+      <!-- </div> -->
     </div>
 
     <!-- start of card -->
@@ -72,7 +72,7 @@
 
     <!-- end of card -->
 
-    <div class="card col-md-4 shadows border p-3 border-top mb-5" id="reviews">
+    <div class="card col-md-4 shadows border p-3 border-top mb-5" id="reviewss">
       <% if(CurrentUser) {%>
         <div class="border-bottom-0 mt-0">
           <h5 class="pt-2 titleSpacing">Add Review</h5>
@@ -113,7 +113,7 @@
 
             <div class="mb-3">
               <label class="form-label mb-0 textSpacing" for="reviews">Comment</label>
-              <textarea class="form-control mt-0 textSpacing" name="review[body]" id="reviews" cols="10" rows="1"
+              <textarea class="form-control mt-0 textSpacing" name="review[body]" id="reviews" cols="4" rows="2"
                 required></textarea>
             </div>
 
@@ -157,7 +157,7 @@
                   </div>
                   <% } %>
 
-          </div>
+          
     </div>
 
 
@@ -170,7 +170,7 @@
 
   <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-    const campgrounds = <% - JSON.stringify(showCamp) %>
+    const campgrounds = <%- JSON.stringify(showCamp) %>
   </script>
 
 
