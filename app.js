@@ -28,7 +28,7 @@ const User = require('./models/user')
 const database = process.env.dbURL
 
 // 'mongodb://localhost:27017/yelp-camp'
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+mongoose.connect(database, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
